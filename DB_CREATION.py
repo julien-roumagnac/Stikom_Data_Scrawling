@@ -1,6 +1,6 @@
 from sqlalchemy import create_engine
 import hashlib
-import unicodedata
+#import unicodedata
 import pandas
 import numpy as np
 import sys

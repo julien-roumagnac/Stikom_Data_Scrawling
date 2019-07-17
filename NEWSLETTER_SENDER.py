@@ -1,9 +1,9 @@
 # coding: utf-8
-import pdfkit
+
 import smtplib
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
-import PyPDF2
+
 from _datetime import datetime
 
 
