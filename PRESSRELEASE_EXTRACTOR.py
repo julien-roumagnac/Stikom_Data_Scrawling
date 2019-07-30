@@ -9,7 +9,7 @@ import hashlib
 import time
 from datetime import datetime
 
-def pressrelease_extract():
+def pressrelease_extract(startdate,enddate):
     #connnexion to the DB
     #newsletter_db = create_engine('postgres://admin:admin@localhost:5432/newsletter')
     newsletter_db = create_engine('postgres://gposlylgjnslfm:7a234bb7261fc07a69167f7a367a158c9f556b902b46aa2cea0c4aecc2c25302@ec2-107-22-211-248.compute-1.amazonaws.com:5432/d690d9feoboig0')
@@ -77,16 +77,18 @@ def pressrelease_extract():
 
         print('_____________')
 
-        # Insertion of the news in the DB
-        hash_object = hashlib.md5((title + desc).encode())
-        id = hash_object.hexdigest()
+        if (startdate < datetime.strptime(date, '%Y-%m-%d') and enddate > datetime.strptime(date, '%Y-%m-%d')):
+            # Insertion of the news in the DB
+            hash_object = hashlib.md5((title + desc).encode())
+            id = hash_object.hexdigest()
 
-        publicationDf = pandas.read_sql(("SELECT * FROM publication WHERE id LIKE %s"), newsletter_db, params=[id])
-        if (publicationDf.empty):
-            newsArray = np.array([[id, desc, time.strftime(date), img, category, title[:250], articlelink, downloadLink]])
-            newsDf = pandas.DataFrame(newsArray,
-                                      columns=['id', 'publication_text', 'creation_date', 'imgelink', 'category', 'title',
-                                               'full_link', 'download_link'])
-            newsDf.to_sql('publication', newsletter_db, if_exists='append', index=False)
-            print('PRESS RELEASE Inserted !')
+            publicationDf = pandas.read_sql(("SELECT * FROM publication WHERE id LIKE %s"), newsletter_db, params=[id])
+            if (publicationDf.empty):
+                newsArray = np.array([[id, desc, time.strftime(date), img, category, title[:250], articlelink, downloadLink]])
+                newsDf = pandas.DataFrame(newsArray,
+                                          columns=['id', 'publication_text', 'creation_date', 'imgelink', 'category', 'title',
+                                                   'full_link', 'download_link'])
+                newsDf.to_sql('publication', newsletter_db, if_exists='append', index=False)
+                print('PRESS RELEASE Inserted !')
+
     print('END OF PRESS RELEASE SECTION')
