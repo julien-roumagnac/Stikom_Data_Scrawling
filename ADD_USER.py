@@ -10,6 +10,20 @@ import time
 from datetime import datetime
 
 newsletter_db = create_engine('postgres://gposlylgjnslfm:7a234bb7261fc07a69167f7a367a158c9f556b902b46aa2cea0c4aecc2c25302@ec2-107-22-211-248.compute-1.amazonaws.com:5432/d690d9feoboig0')
+
+usersDf = pandas.read_sql(("SELECT * FROM user_newsletter order by creation_date "),newsletter_db)
+print('ALL USERS ALLREADY INSERTED ORDER BY DATE')
+print()
+for user in usersDf.values :
+    print("ID : "+user[0]+" "+user[1]+" : "+user[3]+", "+user[4]+";")
+
+print()
+
+
+
+
+
+
 insert = '2'
 while(insert =='2'):
     print(" Hello this file help you to add a new user in the Database of the BPS newsletter ! ")
@@ -102,9 +116,10 @@ while(insert =='2'):
         if (len(insert) == 1):
             if (insert[0] in '12' ):
                 correct = True
-
+    hash_object = hashlib.md5((email).encode())
+    id = hash_object.hexdigest()
     if(insert =='1'):
-        userArray = np.array([[1, username, phonenumber, email, prefbroadcast, sex,
+        userArray = np.array([[id[:20], username, phonenumber, email, prefbroadcast, sex,
                                company, addres, occupation, kbps, survey,time.strftime(date)]])
         userDf = pandas.DataFrame(userArray,
                                   columns=['id', 'username', 'phonenumber', 'email', 'prefbroadcast', 'sex',
