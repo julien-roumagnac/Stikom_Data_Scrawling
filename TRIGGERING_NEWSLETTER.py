@@ -41,6 +41,7 @@ def trigger_and_mail():
         userPhone = user[2]
         userEmail = user[3]
         userCategory =user[4]
+        userDate = user[11]
         print()
         # detecting what are the categories that interest him
         userCategories =''
@@ -62,14 +63,15 @@ def trigger_and_mail():
             userCategories = " p.category ='001' or p.category ='010'or p.category ='100' or p.category = '111' "
 
 
-        print('ID : ' + userId + ', NAME : ' + userName + ', CATEGORY : ' + userCategory + ';' )
+        print('ID : ' + userId + ', NAME : ' + userName + ', CATEGORY : ' + userCategory + ', DATE CREATION : '+ userDate.strftime('%Y-%m-%d') +';' )
         print(" CATEGORIES : " + userCategories)
 
         # we load all the publications that interest him and he never receive from the newsletter
-        userPublicationsDf = pandas.read_sql(("SELECT * FROM publication as p WHERE ("+ userCategories +") and p.id not in ( SELECT news_id from flags where user_id = '"+ userId +"') ORDER BY creation_date "),newsletter_db)
+        userPublicationsDf = pandas.read_sql(("SELECT * FROM publication as p WHERE ("+ userCategories +") and creation_date > '"+userDate.strftime('%Y-%m-%d')+"' and p.id not in ( SELECT news_id from flags where user_id = '"+ userId +"') ORDER BY creation_date "),newsletter_db)
 
         print("PUBLICATIONS THAT INTERESTS  "+ userName +" : " + str(userPublicationsDf.shape[0]))
-        print(userPublicationsDf)
+        for userpubs in userPublicationsDf.values :
+            print(userpubs[2].strftime('%Y-%m-%d')+" : "+ userpubs[4] + " , " + userpubs[5] )
 
         # We check if there are at least 3 publications that interest him
         if( userPublicationsDf.shape[0] > 2 ):

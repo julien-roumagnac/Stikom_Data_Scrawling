@@ -2,12 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1e9cad2e-d224-46ef-aec0-44b4f04ce4d8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/ADD_USER.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DB_CREATION.py" beforeDir="false" afterPath="$PROJECT_DIR$/DB_CREATION.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MAIN.py" beforeDir="false" afterPath="$PROJECT_DIR$/MAIN.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NEWS_EXTRACTOR.py" beforeDir="false" afterPath="$PROJECT_DIR$/NEWS_EXTRACTOR.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PRESSRELEASE_EXTRACTOR.py" beforeDir="false" afterPath="$PROJECT_DIR$/PRESSRELEASE_EXTRACTOR.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PUBLICATION_EXTRACTOR.py" beforeDir="false" afterPath="$PROJECT_DIR$/PUBLICATION_EXTRACTOR.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TRIGGERING_NEWSLETTER.py" beforeDir="false" afterPath="$PROJECT_DIR$/TRIGGERING_NEWSLETTER.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -17,18 +14,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/DB_CREATION.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="448">
-              <caret line="21" column="188" selection-start-line="21" selection-start-column="188" selection-end-line="21" selection-end-column="188" />
-              <folding>
-                <element signature="e#0#36#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/NEWS_EXTRACTOR.py">
           <provider selected="true" editor-type-id="text-editor">
@@ -44,8 +29,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/MAIN.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="88">
-              <caret line="4" selection-start-line="4" selection-end-line="5" selection-end-column="30" />
+            <state relative-caret-position="500">
+              <caret line="26" column="10" selection-start-line="26" selection-start-column="10" selection-end-line="26" selection-end-column="10" />
+              <folding>
+                <element signature="e#0#21#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -53,8 +41,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ADD_USER.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="484">
-              <caret line="37" column="30" lean-forward="true" selection-start-line="31" selection-start-column="4" selection-end-line="37" selection-end-column="30" />
+            <state relative-caret-position="198">
+              <caret line="9" column="29" lean-forward="true" selection-start-line="8" selection-end-line="9" selection-end-column="29" />
+              <folding>
+                <element signature="e#17#46#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/PRESSRELEASE_EXTRACTOR.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="148">
+              <caret line="67" column="48" lean-forward="true" selection-start-line="67" selection-start-column="36" selection-end-line="67" selection-end-column="56" />
               <folding>
                 <element signature="e#17#46#0" expanded="true" />
               </folding>
@@ -63,12 +63,12 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/PRESSRELEASE_EXTRACTOR.py">
+        <entry file="file://$PROJECT_DIR$/TRIGGERING_NEWSLETTER.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="720">
-              <caret line="93" column="4" selection-start-line="93" selection-start-column="4" selection-end-line="93" selection-end-column="4" />
+            <state relative-caret-position="302">
+              <caret line="69" column="159" selection-start-line="69" selection-start-column="159" selection-end-line="69" selection-end-column="159" />
               <folding>
-                <element signature="e#17#46#0" expanded="true" />
+                <element signature="e#0#36#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -77,10 +77,22 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/PUBLICATION_EXTRACTOR.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="368">
-              <caret line="96" column="106" selection-start-line="96" selection-start-column="106" selection-end-line="96" selection-end-column="106" />
+            <state relative-caret-position="558">
+              <caret line="104" column="60" selection-start-line="104" selection-start-column="46" selection-end-line="104" selection-end-column="60" />
               <folding>
                 <element signature="e#17#46#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/DB_CREATION.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="506">
+              <caret line="23" column="199" selection-start-line="23" selection-start-column="199" selection-end-line="23" selection-end-column="199" />
+              <folding>
+                <element signature="e#0#36#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -106,12 +118,13 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/DB_CREATION.py" />
         <option value="$PROJECT_DIR$/ADD_USER.py" />
-        <option value="$PROJECT_DIR$/MAIN.py" />
         <option value="$PROJECT_DIR$/NEWS_EXTRACTOR.py" />
         <option value="$PROJECT_DIR$/PRESSRELEASE_EXTRACTOR.py" />
         <option value="$PROJECT_DIR$/PUBLICATION_EXTRACTOR.py" />
+        <option value="$PROJECT_DIR$/MAIN.py" />
+        <option value="$PROJECT_DIR$/DB_CREATION.py" />
+        <option value="$PROJECT_DIR$/TRIGGERING_NEWSLETTER.py" />
       </list>
     </option>
   </component>
@@ -151,6 +164,9 @@
       </pane>
     </panes>
   </component>
+  <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+  </component>
   <component name="RunDashboard">
     <option name="ruleStates">
       <list>
@@ -180,7 +196,7 @@
     <frame x="67" y="25" width="1853" height="1055" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24972677" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24972677" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -200,15 +216,6 @@
     </layout>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/TRIGGERING_NEWSLETTER.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#36#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/NEWSLETTER_SENDER.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="132">
@@ -216,30 +223,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/MAIN.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="500">
+          <caret line="26" column="10" selection-start-line="26" selection-start-column="10" selection-end-line="26" selection-end-column="10" />
+          <folding>
+            <element signature="e#0#21#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/ADD_USER.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="484">
-          <caret line="37" column="30" lean-forward="true" selection-start-line="31" selection-start-column="4" selection-end-line="37" selection-end-column="30" />
+        <state relative-caret-position="198">
+          <caret line="9" column="29" lean-forward="true" selection-start-line="8" selection-end-line="9" selection-end-column="29" />
           <folding>
             <element signature="e#17#46#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DB_CREATION.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="448">
-          <caret line="21" column="188" selection-start-line="21" selection-start-column="188" selection-end-line="21" selection-end-column="188" />
-          <folding>
-            <element signature="e#0#36#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MAIN.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="4" selection-start-line="4" selection-end-line="5" selection-end-column="30" />
         </state>
       </provider>
     </entry>
@@ -255,8 +255,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/PUBLICATION_EXTRACTOR.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="96" column="106" selection-start-line="96" selection-start-column="106" selection-end-line="96" selection-end-column="106" />
+        <state relative-caret-position="558">
+          <caret line="104" column="60" selection-start-line="104" selection-start-column="46" selection-end-line="104" selection-end-column="60" />
           <folding>
             <element signature="e#17#46#0" expanded="true" />
           </folding>
@@ -265,10 +265,30 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/PRESSRELEASE_EXTRACTOR.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="720">
-          <caret line="93" column="4" selection-start-line="93" selection-start-column="4" selection-end-line="93" selection-end-column="4" />
+        <state relative-caret-position="148">
+          <caret line="67" column="48" lean-forward="true" selection-start-line="67" selection-start-column="36" selection-end-line="67" selection-end-column="56" />
           <folding>
             <element signature="e#17#46#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DB_CREATION.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="506">
+          <caret line="23" column="199" selection-start-line="23" selection-start-column="199" selection-end-line="23" selection-end-column="199" />
+          <folding>
+            <element signature="e#0#36#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TRIGGERING_NEWSLETTER.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="302">
+          <caret line="69" column="159" selection-start-line="69" selection-start-column="159" selection-end-line="69" selection-end-column="159" />
+          <folding>
+            <element signature="e#0#36#0" expanded="true" />
           </folding>
         </state>
       </provider>

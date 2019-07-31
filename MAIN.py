@@ -23,8 +23,8 @@ while(not(correct)):
         if(enddate[0] in '0123456789' and enddate[1] in '0123456789' and enddate[2] in '0123456789' and enddate[3] in '0123456789' and enddate[5] in '0123456789' and enddate[6] in '0123456789' and enddate[8] in '0123456789' and enddate[9] in '0123456789' and enddate[0] in '0123456789' and enddate[4] == '-' and enddate[7] == '-'):
             correct = True
 
-print('start : '+ startdate)
-print('end : '+ enddate)
+print('START : '+ startdate)
+print('END : '+ enddate)
 
 # EXTRATION OF THE NEW ARTICLE FROM THE 3 WEB PAGES OF BPS
 NEWS_EXTRACTOR.extract_news(datetime.strptime(startdate, '%Y-%m-%d'),datetime.strptime(enddate, '%Y-%m-%d'))
