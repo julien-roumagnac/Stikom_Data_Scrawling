@@ -7,7 +7,7 @@ import numpy as np
 import requests
 import hashlib
 import time
-from datetime import datetime
+from datetime import datetime , timedelta
 
 newsletter_db = create_engine('postgres://gposlylgjnslfm:7a234bb7261fc07a69167f7a367a158c9f556b902b46aa2cea0c4aecc2c25302@ec2-107-22-211-248.compute-1.amazonaws.com:5432/d690d9feoboig0')
 
@@ -89,7 +89,7 @@ while(insert =='2'):
     survey = input()
     print("survey : ", survey)
 
-    date = datetime.today().strftime('%Y-%m-%d')
+    date =""
 
 
     print()
@@ -116,6 +116,54 @@ while(insert =='2'):
         if (len(insert) == 1):
             if (insert[0] in '12' ):
                 correct = True
+
+    usersSameCategoryDf = pandas.read_sql(("SELECT * FROM user_newsletter where prefbroadcast = '"+prefbroadcast+"' order by creation_date "), newsletter_db)
+    if(usersSameCategoryDf.shape[0] == 0):
+        date = datetime.today().strftime('%Y-%m-%d')
+    else :
+
+        userId = usersSameCategoryDf.values[0][0]
+        userName = usersSameCategoryDf.values[0][1]
+        userPhone = usersSameCategoryDf.values[0][2]
+        userEmail = usersSameCategoryDf.values[0][3]
+        userCategory = usersSameCategoryDf.values[0][4]
+        userDate = usersSameCategoryDf.values[0][11]
+        print()
+        # detecting what are the categories that interest him
+        userCategories = ''
+        if userCategory == '000':
+            userCategories = "p.category = '000'"
+        if userCategory == '001':
+            userCategories = " p.category ='001' or p.category = '111' "
+        if userCategory == '010':
+            userCategories = " p.category ='010' or p.category = '111' "
+        if userCategory == '100':
+            userCategories = " p.category ='100' or p.category = '111' "
+        if userCategory == '011':
+            userCategories = " p.category ='001' or p.category ='010' or p.category = '111' "
+        if userCategory == '101':
+            userCategories = " p.category ='001' or p.category ='100' or p.category = '111' "
+        if userCategory == '110':
+            userCategories = " p.category ='100' or p.category ='010' or p.category = '111' "
+        if userCategory == '111':
+            userCategories = " p.category ='001' or p.category ='010'or p.category ='100' or p.category = '111' "
+
+
+
+        # we load all the publications that interest him and he never receive from the newsletter
+        userPublicationsDf = pandas.read_sql(("SELECT * FROM publication as p WHERE (" + userCategories + ") and creation_date > '" + userDate.strftime(
+                                                     '%Y-%m-%d') + "' and p.id not in ( SELECT news_id from flags where user_id = '" + userId + "') ORDER BY creation_date "),
+                                             newsletter_db)
+
+        for userpubs in userPublicationsDf.values:
+            print(userpubs[2].strftime('%Y-%m-%d') + " : " + userpubs[4] + " , " + userpubs[5])
+        if (userPublicationsDf.shape[0]==0 ):
+            date = datetime.today().strftime('%Y-%m-%d')
+        else :
+
+            date = (userPublicationsDf.values[0][2]- timedelta(1)).strftime('%Y-%m-%d')
+
+
     hash_object = hashlib.md5((email).encode())
     id = hash_object.hexdigest()
     if(insert =='1'):

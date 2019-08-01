@@ -200,7 +200,8 @@ def send_newsletter(userName,userEmail,publications):
                                 <!-- Intro -->
                                 <table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#ffffff">
                                     <tr>
-                                        <td style="padding-bottom: 10px;">
+                                        <td style="padding-bottom: 10px; text-align:center;">
+                                            <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Lambang_Badan_Pusat_Statistik_%28BPS%29_Indonesia.svg/1280px-Lambang_Badan_Pusat_Statistik_%28BPS%29_Indonesia.svg.png' alt="BPS logo" width="200" height="133">
                                             <table width="100%" border="0" cellspacing="0" cellpadding="0">
                                                 <tr>
                                                     <td class="p30-15" style="padding: 60px 30px;">
