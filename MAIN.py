@@ -2,6 +2,7 @@ import NEWS_EXTRACTOR
 import PUBLICATION_EXTRACTOR
 import PRESSRELEASE_EXTRACTOR
 import TRIGGERING_NEWSLETTER
+import PREVIEW_NEWSLETTER
 import time
 from _datetime import datetime
 
@@ -31,5 +32,16 @@ NEWS_EXTRACTOR.extract_news(datetime.strptime(startdate, '%Y-%m-%d'),datetime.st
 PUBLICATION_EXTRACTOR.publication_extract(datetime.strptime(startdate, '%Y-%m-%d'),datetime.strptime(enddate, '%Y-%m-%d'))
 PRESSRELEASE_EXTRACTOR.pressrelease_extract(datetime.strptime(startdate, '%Y-%m-%d'),datetime.strptime(enddate, '%Y-%m-%d'))
 
+#SENDING TO YOUR MAIL A PREVIEW TO SEE IF YOU ARE OKAY TO SEND IT
+PREVIEW_NEWSLETTER.preview_by_mail()
+
 # FINDING USERS TO NOTIFY AND THEN SEND EMAIL
-TRIGGERING_NEWSLETTER.trigger_and_mail()
+print('A PREVIEW OF THE NEWSLETTER OF ALL THE CATEGORIES HAS BEEN SEND TO THE TEST MAIL PLEASE CHECK IT BEFORE SEND TO THE USERS !')
+print()
+print()
+print('DO YOU WANT TO SEND THE NEWSLETTERS TO THE USERS ? (please enter 1 for YES or 2 for NO)')
+send = input()
+if(send == '1'):
+    TRIGGERING_NEWSLETTER.trigger_and_mail()
+else :
+    print("THE NEWSLETTERS HAS NOT BEEN SEND ! ")
