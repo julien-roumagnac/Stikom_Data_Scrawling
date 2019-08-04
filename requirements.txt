@@ -1,7 +1,8 @@
 pandas
 SQLAlchemy
 beautifulsoup4
-hashlib
+psycopg2.binary
 numpy
 requests
 smtplib
+hashlib
