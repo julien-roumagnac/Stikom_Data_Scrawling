@@ -1,0 +1,7 @@
+pandas
+SQLAlchemy
+beautifulsoup4
+hashlib
+numpy
+requests
+smtplib
