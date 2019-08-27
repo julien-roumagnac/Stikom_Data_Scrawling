@@ -51,6 +51,7 @@ def preview_by_mail():
                     '%Y-%m-%d') + "' and p.id not in ( SELECT news_id from flags where user_id = '" + userId + "') ORDER BY creation_date "),
                 newsletter_db)
             print("PUBLICATIONS FOR THIS CATEGORY : ")
+            print(userPublicationsDf.shape[0])
             for userpubs in userPublicationsDf.values:
                 print(userpubs[2].strftime('%Y-%m-%d') + " : " + userpubs[4] + " , " + userpubs[5])
 
